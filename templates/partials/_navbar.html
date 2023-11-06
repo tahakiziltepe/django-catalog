@@ -1,0 +1,41 @@
+    <header>
+        <div class="navbar navbar-expand-sm bg-primary navbar-dark">
+
+            <div class="container">
+<!--               <a href="{% url 'index' %}" class = "navbar-brand mr-auto"> Movie App </a>-->
+               <a class="navbar-brand" href="{% url 'index' %}">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Movie_icon.svg/1200px-Movie_icon.svg.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                  Movie App
+               </a>
+                <ul class = "navbar-nav ml-auto">
+                   <li
+                           {% if request.path == '/' %}
+                                class="nav-item active"
+                           {% else %}
+                                class="nav-item"
+                           {% endif %}
+                   >
+                       <a href="{% url 'index' %}" class = "nav-link"> Home </a>
+                   </li>
+                   <li
+                           {% if request.path == '/about' %}
+                                class="nav-item active"
+                           {% else %}
+                                class="nav-item"
+                           {% endif %}
+                   >
+                       <a href="{% url 'about' %}" class = "nav-link"> About </a>
+                   </li>
+                   <li
+                           {% if request.path == '/movies' or  request.path == '/movies/' %}
+                                class="nav-item active"
+                           {% else %}
+                                class="nav-item"
+                           {% endif %}
+                   >
+                       <a href="{% url 'movies' %}" class = "nav-link"> Movies </a>
+                   </li>
+               </ul>
+            </div>
+        </div>
+    </header>

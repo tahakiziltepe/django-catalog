@@ -1,0 +1,99 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Fluid jumbotron</h1>
+    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+  </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card mb-3">
+            <div class="row">
+                <div class="col-md-3">
+                    <img class = "card-img" src= {{ info.image }} alt="">
+                </div>
+                <div class="col-md-9">
+                    <div class="card-body">
+                        <div class="card-title"> {{ info.name }} </div>
+                            <p class="card-text">
+                                <table>
+                                    <tr>
+                                        <th>Nutrient</th> <th>Amount</th>
+                                    </tr>
+                                        {% for nutrient in nutrients %}
+
+                                    <tr>
+                                        <td>{{nutrient.name}} </td> <td> {{nutrient.amount}}</td>
+                                    </tr>
+
+                                    {% endfor %}
+<!--                                    <tr>-->
+<!--                                        <td>{{ 0.name }}</td> <td>{{ 0.amount }}</td>-->
+<!--                                    </tr>-->
+<!--                                    <tr>-->
+<!--                                        <td>{{ 1.name }}</td> <td>{{ 1.amount }}</td>-->
+<!--                                    </tr>-->
+<!--                                    <tr>-->
+<!--                                        <td>{{ 2.name }}</td> <td>{{ 2.amount }}</td>-->
+<!--                                    </tr>-->
+<!--                                    <tr>-->
+<!--                                        <td>{{ 3.name }}</td> <td>{{ 3.amount }}</td>-->
+<!--                                    </tr>-->
+<!--                                    <tr>-->
+<!--                                        <td>{{ 4.name }}</td> <td>{{ 4.amount }}</td>-->
+<!--                                    </tr>-->
+                                </table>
+                            </p>
+                            <p class="card-text">
+                                <small class="text-muted">3 days ago</small>
+                            </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card mb-3">
+            <div class="row">
+                <div class="col-md-3">
+                    <img class = "card-img" src="{%static 'img/2.jpg'%}" alt="">
+                </div>
+                <div class="col-md-9">
+                    <div class="card-body">
+                        <div class="card-title"></div>
+                            <p class="card-text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, libero.
+                            </p>
+                            <p class="card-text">
+                                <small class="text-muted">3 days ago</small>
+                            </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card mb-3">
+            <div class="row">
+                <div class="col-md-3">
+                    <img class = "card-img" src="{%static 'img/3.jpg'%}" alt="">
+                </div>
+                <div class="col-md-9">
+                    <div class="card-body">
+                        <div class="card-title"></div>
+                            <p class="card-text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, libero.
+                            </p>
+                            <p class="card-text">
+                                <small class="text-muted">3 days ago</small>
+                            </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock%}
